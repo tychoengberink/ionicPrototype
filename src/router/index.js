@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
     path: '',
-    redirect: '/folder/Inbox'
+    redirect: '/folder/upcoming-parties'
   },
   {
     path: '/folder/:id',
