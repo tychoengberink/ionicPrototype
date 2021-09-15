@@ -17,7 +17,7 @@
       </ion-header>
 
 
-      <parties-list @refresh="refresh" :parties="parties"
+      <parties-list :parties="parties"
                     v-if="$route.params.id === 'upcoming-parties'"></parties-list>
 
     </ion-content>
@@ -39,7 +39,6 @@ import {
 } from '@ionic/vue';
 import PartyModal from '@/components/modal/parties/addParty.vue';
 import PartiesList from '@/components/parties/PartiesList.vue';
-import {Storage, Drivers} from '@ionic/storage';
 
 export default {
   name: 'Folder',
@@ -57,7 +56,6 @@ export default {
   data() {
     return {
       parties: [],
-      loading: false
     }
   },
   mounted() {
@@ -82,16 +80,10 @@ export default {
     },
 
     async refresh() {
-      this.parties = [];
-      const store = new Storage({
-        driverOrder: [Drivers.LocalStorage]
-      });
-      await store.create();
-      store.forEach((value) => {
-        this.parties.push(JSON.parse(value))
-      });
-    }
-  },
+    // this.clearLocalStorage();
+    this.parties = await this.forEachStorage();
+   },
+}
 }
 </script>
 

@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "ionicPrototype",
+	"appId": "nl.engberink.PartyPlanner",
+	"appName": "PartyPlanner",
 	"webDir": "dist",
 	"bundledWebRuntime": false
 }

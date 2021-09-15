@@ -31,11 +31,7 @@ export default {
             component: detailsParty,
             cssClass: 'my-custom-class',
             componentProps: {
-              title: this.party.title,
-              description: this.party.description,
-              startDateTime: this.party.startDateTime,
-              endDateTime: this.party.endDateTime,
-              invitees: this.party.invitees,
+              party: this.party
             },
           })
       return modal.present();
